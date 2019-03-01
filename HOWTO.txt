@@ -1,0 +1,10 @@
+pyicloud ライブラリが必要
+sudo python3 setup.py install
+(sudo python3 -m install pyicloud ???)
+
+/usr/local/lib/python3.5/dist-packages とその配下に
+Python のライブラリパスが通る。
+
+以下はしなくてもよい。
+
+PYTHONPATH=/usr/local/lib/python3.5/dist-packages/pyicloud-0.9.1-py3.5.egg ./icloud-photo-dl.py
