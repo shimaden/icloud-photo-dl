@@ -127,7 +127,7 @@ def download_a_photo(i, photo, album_size, dest_fname, show_only):
     fname = make_download_fname(dest_fname)
     timestamp = localtime(photo.created)
     if fname == dest_fname:
-        print('Downloading ({}/{}) {} ({}) "{}"...'.format(
+        print('Downloading ({}/{}) "{}" ({}) {}...'.format(
                 i + 1, album_size, fname, photo.size,
                 timestamp.strftime("%Y-%m-%d %H:%M:%S %z %Z")
             )
@@ -136,7 +136,7 @@ def download_a_photo(i, photo, album_size, dest_fname, show_only):
         if not show_only:
             response = save_to_file(photo, fname)
     else:
-        print('Downloading file ({}/{}) {} ({}) {} as "{}"...'.format(
+        print('Downloading file ({}/{}) "{}" ({}) {} as "{}"...'.format(
                 i + 1, album_size, dest_fname, photo.size,
                 timestamp.strftime("%Y-%m-%d %H:%M:%S %z %Z"),
                 fname
@@ -225,8 +225,6 @@ if len(sys.argv) == 2:
         show_only = True
         print('Download all albums except for "All Photos"')
         download_all_albums(api, show_only)
-        print("Show 'All Photos'")
-        show_only = True
     elif sys.argv[1] == '--titles':
         api = auth(account['user'], account['password'])
         print("Show album titles:")

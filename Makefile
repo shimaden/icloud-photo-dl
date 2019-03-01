@@ -12,7 +12,7 @@ uninstall:
 
 clean:
 	rm -f *~
-	#test -d albums && rm -rf albums/*
+	test -d albums && rm -rf albums
 
 clean-album:
 	rm -rf albums
